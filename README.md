@@ -4,6 +4,8 @@ Booth slideshow for the **3D Printer Playground**, presented by [FUBAR Labs](htt
 
 The deck is a single self-contained HTML file: open `FUBAR_Labs_Robocon_presentation.html` in any browser. No server needed.
 
+**View it online:** https://ricklon.github.io/FUBAR_Labs_Robocon/ (add `?kiosk&interval=15` for kiosk mode)
+
 ## Files
 
 | Path | What it is |
