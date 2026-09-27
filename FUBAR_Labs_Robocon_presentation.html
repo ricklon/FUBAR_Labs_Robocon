@@ -74,7 +74,7 @@ if(kiosk){document.body.classList.add('present','kiosk');show(0);autoplay(true)
 document.addEventListener('keydown',e=>{const k=e.key;
   if(kiosk)return;
   if(k==='a')autoplay(!timer);
-  else if(k==='p'||k==='f'||k==='F5')present(!document.body.classList.contains('present'));
+  else if(k==='p'||k==='f'||k==='F5'){e.preventDefault();present(!document.body.classList.contains('present'))}
   else if(k==='Escape')present(false);
   else if(k==='n')document.body.classList.toggle('show-notes');
   else if(['ArrowRight','ArrowDown','PageDown',' '].includes(k)){e.preventDefault();show(cur+1)}

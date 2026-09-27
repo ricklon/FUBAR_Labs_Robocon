@@ -14,7 +14,7 @@ The deck is a single self-contained HTML file: open `FUBAR_Labs_Robocon_presenta
 | `FUBAR_Labs_Robocon_presentation.pptx` | PowerPoint source for most slides |
 | `slides/` | Hand-built HTML slides and their images (the prize giveaway slide) |
 | `convert.py` | Builds the HTML deck from the pptx plus `slides/` |
-| `kiosk.sh` | Runs the deck full-screen in Chrome, auto-advancing and looping |
+| `kiosk.sh` | Runs the deck full-screen in Chrome or Firefox, auto-advancing and looping |
 
 ## Presenting
 
@@ -37,7 +37,15 @@ For an unattended booth screen:
 ./kiosk.sh 15     # 15 seconds per slide
 ```
 
-This launches `google-chrome` in kiosk mode with the cursor hidden. Exit with `Alt+F4`. You can also open the HTML file with `?kiosk&interval=15` appended to the URL; it starts looping right away and goes full screen on the first click, tap, or key press.
+This uses Chrome or Chromium if installed, otherwise Firefox, and opens the deck full screen in kiosk mode with the cursor hidden. To force a browser:
+
+```sh
+KIOSK_BROWSER=firefox ./kiosk.sh 15
+```
+
+Exit with `Alt+F4`. Firefox runs with a throwaway profile in `/tmp`, so first-run pages and the full-screen warning don't cover the slides.
+
+Without the script, open the deck with `?kiosk&interval=15` appended to the URL, in Chrome or Firefox. It starts looping right away and goes full screen on the first click, tap, or key press.
 
 ## Rebuilding the deck
 
