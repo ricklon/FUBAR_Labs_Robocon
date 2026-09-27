@@ -1,2 +1,7 @@
-# Backup of the deck before the giveaway slide was added
-FUBAR_Labs_Robocon_presentation.before-giveaway.html
+# Unpacked pptx used as converter input
+build/
+
+# Local backups of the generated deck
+*.before-*.html
+
+__pycache__/

@@ -1,3 +1,12 @@
+"""Convert an unpacked .pptx into a single self-contained HTML slide deck.
+
+Usage:
+    mkdir -p build && unzip -o FUBAR_Labs_Robocon_presentation.pptx -d build/pptx
+    python convert.py build/pptx FUBAR_Labs_Robocon_presentation.html
+
+Images are inlined as data URIs; hand-built slides listed in EXTRA_SLIDES are
+spliced in from slides/. Requires lxml.
+"""
 import base64, html, os, re, sys
 from lxml import etree
 
