@@ -37,7 +37,7 @@ For an unattended booth screen:
 ./kiosk.sh 15     # 15 seconds per slide
 ```
 
-This launches `google-chrome` in kiosk mode with the cursor hidden. Exit with `Alt+F4`. You can also open the HTML file with `?kiosk&interval=15` appended to the URL.
+This launches `google-chrome` in kiosk mode with the cursor hidden. Exit with `Alt+F4`. You can also open the HTML file with `?kiosk&interval=15` appended to the URL; it starts looping right away and goes full screen on the first click, tap, or key press.
 
 ## Rebuilding the deck
 

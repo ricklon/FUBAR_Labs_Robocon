@@ -256,7 +256,10 @@ function present(on){document.body.classList.toggle('present',on);
 const qs=new URLSearchParams(location.search);const kiosk=qs.has('kiosk');
 const interval=Math.max(1,parseFloat(qs.get('interval'))||10)*1000;let timer=null;
 function autoplay(on){clearInterval(timer);timer=on?setInterval(()=>show((cur+1)%frames.length),interval):null}
-if(kiosk){document.body.classList.add('present','kiosk');autoplay(true)}
+if(kiosk){document.body.classList.add('present','kiosk');show(0);autoplay(true)
+  // browsers only allow fullscreen after a user gesture, so take the first click/tap/key
+  const fs=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.()?.catch(()=>{})};
+  ['click','touchend','keydown'].forEach(t=>document.addEventListener(t,fs))}
 document.addEventListener('keydown',e=>{const k=e.key;
   if(kiosk)return;
   if(k==='a')autoplay(!timer);
